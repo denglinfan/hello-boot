@@ -1,0 +1,20 @@
+package com.example.helloboot.designParttern.parttern.command.macro;
+
+import com.example.helloboot.designParttern.parttern.command.example.Command;
+
+public interface MacroComand extends Command {
+
+    /**
+     * 宏命令聚集的管理方法
+     * 可以添加一个成员命令
+     * @param cmd
+     */
+    public void add(Command cmd);
+
+    /**
+     * 宏命令聚集的管理方法
+     * 可以删除一个成员命令
+     * @param cmd
+     */
+    public void remove(Command cmd);
+}
