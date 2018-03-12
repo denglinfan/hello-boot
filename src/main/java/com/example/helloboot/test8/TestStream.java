@@ -26,7 +26,7 @@ public class TestStream {
 
         addSortOperations();*/
 
-        /*streamRepeatly();*/
+        streamRepeatly();
 
         baseCollectMethod();
         myOwnCollectOperators();
