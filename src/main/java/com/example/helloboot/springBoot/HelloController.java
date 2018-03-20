@@ -10,4 +10,9 @@ public class HelloController {
     public String hello(){
         return "hello,this is a springBoot demo!!!";
     }
+
+    @RequestMapping("/testDevTools")
+    public String testDevTools(){
+        return "hello,testDevTools is successful!!!";
+    }
 }
