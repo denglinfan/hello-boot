@@ -1,6 +1,6 @@
 package com.example.helloboot.springBoot.services.impl;
 
-import com.example.helloboot.springBoot.db.dao.TestDao;
+import com.example.helloboot.springBoot.db.dao.master.TestDao;
 import com.example.helloboot.springBoot.services.ITestJdbc;
 import org.springframework.stereotype.Service;
 

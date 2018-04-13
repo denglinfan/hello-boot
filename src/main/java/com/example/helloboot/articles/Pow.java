@@ -15,6 +15,20 @@ package com.example.helloboot.articles;
 public class Pow {
 
     public static double myPow(double x, int n) {
-        return 0.0;
+        long m = n > 0 ? n : -(long)n;
+        double ans = 1.0;
+        while (m != 0) {
+            if ((m & 1) == 1)
+                ans *= x;
+            x *= x;
+            m >>= 1;
+        }
+        return n >= 0 ? ans : 1 / ans;
+    }
+
+
+    public static void main(String[] args){
+        double t = myPow(2.10000,3);
+        System.out.println(t);
     }
 }
