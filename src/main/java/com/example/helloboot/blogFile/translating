@@ -1,0 +1,31 @@
+第二部分：入门
+    如果你开始学习Spring boot，或者“Spring”,那就先从阅读本单元开始吧。这里介绍了“what?”,"how?"以及“why?”等基本问题。
+ 也包含了根据配置结构的有关Spring boot的介绍，然后我们会带着你构建你的第一个Spring boot应用，同事讨论一些核心的原则。
+
+8.Spring boot简介
+    Spring boot可以很容易的创建可以直接运行的独立，工业级别的基于Spring的应用。我们对Spring平台和第三方的库有自己的一些看法，所以你可以以最少的
+工作开始使用它。多数的Spring boot应用只需要很少的Spring配置。
+
+    你可以使用Spring boot创建一个可以通过使用java -jar或者更多传统的war包调度来运行的java应用。我们也提供了使用命令行工具来运行Spring脚本的的方式。
+
+    主要目标：
+        1.为所有的Spring开发提供一个快速的、易理解的入门经验
+        2.Be opinionated out of the box but get out of the way quickly as requirements start to diverge from the defaults.
+        3.提供了大量的包含众多公共类的非功能性特征的项目(如：内嵌式(embedded)服务，安全，指标(metrics)，健康检查以及外部(externalized)配置)
+        4.绝对的无代码生成，也不需要XML配置
+
+9.系统要求(Requirements)
+    Spring Boot 2.0.1.RELEASE版本要求java 8和Spring Framework 5.0.5.RELEASE及以上。为Maven3.2+和Gradle 4提供了显示构建的支持。
+
+    9.1 Servlet容器
+    Spring boot支持以下的嵌入式Servlet容器
+                        Name	                   Servlet Version
+                     Tomcat8.5                          3.1
+
+                     Jetty 9.4                          3.1
+
+                     Undertow 1.4                       3.1
+
+    你还可以把Spring boot项目部署到任何Servlet 3.1版本以上的兼容(compatible)容器中
+
+10. 安装Spring boot
