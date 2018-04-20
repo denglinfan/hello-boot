@@ -1,0 +1,7 @@
+1.通过添加log_bin=D:\dev/mysql/log/mysql-bin.log配置到my.ini中，并重启mysql服务，便可打开mysql的binlog日志记录
+
+2.使用 show variables like '%log_bin%'查看binlog配置情况
+3.使用show master status可以查看当前mysql的binlog的情况，重启一次服务，binlog便会自动生成一个
+4.可以通过flush logs 来手动刷新binlog文件，该命令也会生成一个新的binlog文件
+5.可以使用reset master来清空所有的binlog文件
+6.可以通过show binlog events来查看binlog的event类型
