@@ -1,7 +1,7 @@
 package com.example.helloboot.springBoot.binlogListener.net.impl.packet;
 
 import com.example.helloboot.springBoot.binlogListener.common.glossary.column.StringColumn;
-import com.example.helloboot.springBoot.binlogListener.common.glossary.column.UnsignedLong;
+import com.example.helloboot.springBoot.binlogListener.common.glossary.UnsignedLong;
 import com.example.helloboot.springBoot.binlogListener.common.utils.ToStringBuilder;
 import com.example.helloboot.springBoot.binlogListener.io.util.XDeserializer;
 import com.example.helloboot.springBoot.binlogListener.io.util.XSerializer;

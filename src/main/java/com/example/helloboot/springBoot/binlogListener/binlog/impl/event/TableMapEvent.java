@@ -4,7 +4,7 @@ import com.example.helloboot.springBoot.binlogListener.binlog.BinlogEventV4Heade
 import com.example.helloboot.springBoot.binlogListener.common.glossary.Metadata;
 import com.example.helloboot.springBoot.binlogListener.common.glossary.column.BitColumn;
 import com.example.helloboot.springBoot.binlogListener.common.glossary.column.StringColumn;
-import com.example.helloboot.springBoot.binlogListener.common.glossary.column.UnsignedLong;
+import com.example.helloboot.springBoot.binlogListener.common.glossary.UnsignedLong;
 import com.example.helloboot.springBoot.binlogListener.common.utils.MySqlConstants;
 import com.example.helloboot.springBoot.binlogListener.common.utils.ToStringBuilder;
 

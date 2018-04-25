@@ -24,7 +24,7 @@ public class LogEvent implements Serializable {
     private Long timeStamp = null;//事件发生的时间戳[MYSQL服务器时间]
     private Long timeStampRecepite = null;//服务接收到的时间戳[CDC执行的时间戳]
     private String binlogName = null;//binlog文件名称
-    private Integer position = null;
+    private Long position = null;
     private Long nextPosition = null;
     private Long serverId = null;
     //after,before标识变化前后所在行的所有数据（columnName：columnValue)
@@ -133,11 +133,11 @@ public class LogEvent implements Serializable {
         this.binlogName = binlogName;
     }
 
-    public Integer getPosition() {
+    public Long getPosition() {
         return position;
     }
 
-    public void setPosition(Integer position) {
+    public void setPosition(Long position) {
         this.position = position;
     }
 

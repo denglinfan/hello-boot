@@ -4,7 +4,7 @@ public interface BinlogEventV4Header {
 
     int getHeaderLength();
 
-    int getPosition();
+    long getPosition();
 
     long getTimeStamp();
 

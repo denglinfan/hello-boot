@@ -1,5 +1,6 @@
 package com.example.helloboot.springBoot.binlogListener.binlog.impl.event;
 
+import com.example.helloboot.springBoot.binlogListener.binlog.BinlogEventV4Header;
 import com.example.helloboot.springBoot.binlogListener.binlog.StatusVariable;
 import com.example.helloboot.springBoot.binlogListener.common.glossary.column.StringColumn;
 import com.example.helloboot.springBoot.binlogListener.common.utils.MySqlConstants;
@@ -20,6 +21,10 @@ public class QueryEvent extends AbstractBinlogEventV4 {
     private StringColumn sql;
 
     public QueryEvent() {
+    }
+
+    public QueryEvent(BinlogEventV4Header header) {
+        this.header = header;
     }
 
     @Override

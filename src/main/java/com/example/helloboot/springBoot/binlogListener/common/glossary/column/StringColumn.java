@@ -8,7 +8,7 @@ public class StringColumn implements Column {
 
     private final byte[] value;
 
-    public StringColumn(byte[] value) {
+    private StringColumn(byte[] value) {
         this.value = value;
     }
 

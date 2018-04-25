@@ -21,7 +21,7 @@ public class TransportInputStreamImpl extends XInputStreamImpl implements Transp
     @Override
     public Packet readPacket() throws IOException {
         final RawPacket r = new RawPacket();
-        r.setLength(readInt(readInt(3)));
+        r.setLength(readInt(3));
         r.setSequence(readInt(1));
 
         int total = 0;

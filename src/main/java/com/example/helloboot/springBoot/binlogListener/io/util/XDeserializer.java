@@ -2,7 +2,7 @@ package com.example.helloboot.springBoot.binlogListener.io.util;
 
 import com.example.helloboot.springBoot.binlogListener.common.glossary.column.BitColumn;
 import com.example.helloboot.springBoot.binlogListener.common.glossary.column.StringColumn;
-import com.example.helloboot.springBoot.binlogListener.common.glossary.column.UnsignedLong;
+import com.example.helloboot.springBoot.binlogListener.common.glossary.UnsignedLong;
 import com.example.helloboot.springBoot.binlogListener.io.XInputStream;
 import com.example.helloboot.springBoot.binlogListener.io.impl.XInputStreamImpl;
 

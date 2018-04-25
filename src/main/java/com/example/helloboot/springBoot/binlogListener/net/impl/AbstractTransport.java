@@ -31,7 +31,7 @@ public abstract class AbstractTransport implements Transport {
 
     @Override
     public TransportContext getContext() {
-        return null;
+        return context;
     }
 
     public static class Context implements TransportContext{

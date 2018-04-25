@@ -3,7 +3,10 @@ package com.example.helloboot.springBoot.binlogListener;
 import com.example.helloboot.springBoot.binlogListener.binlog.BinlogEventListener;
 import com.example.helloboot.springBoot.binlogListener.binlog.BinlogParser;
 import com.example.helloboot.springBoot.binlogListener.binlog.BinlogParserListener;
+import com.example.helloboot.springBoot.binlogListener.binlog.impl.ReplicationBasedBinlogParser;
+import com.example.helloboot.springBoot.binlogListener.binlog.impl.parser.*;
 import com.example.helloboot.springBoot.binlogListener.common.glossary.column.StringColumn;
+import com.example.helloboot.springBoot.binlogListener.io.impl.SocketFactoryImpl;
 import com.example.helloboot.springBoot.binlogListener.net.Packet;
 import com.example.helloboot.springBoot.binlogListener.net.Transport;
 import com.example.helloboot.springBoot.binlogListener.net.TransportException;
@@ -216,6 +219,41 @@ public class OpenReplicator {
         r.setLevel2BufferSize(this.level2BufferSize);
 
         final AuthenticatorImpl authenticator = new AuthenticatorImpl();
-        //TODO
+        authenticator.setUser(this.user);
+        authenticator.setPassword(this.password);
+        authenticator.setEncoding(this.encoding);
+        r.setAuthenticator(authenticator);
+
+        final SocketFactoryImpl socketFactory = new SocketFactoryImpl();
+        socketFactory.setKeepAlive(true);
+        socketFactory.setTcpNoDelay(false);
+        socketFactory.setReceiveBufferSize(this.socketReceiveBufferSize);
+        r.setSocketFactory(socketFactory);
+        return r;
+    }
+
+    protected ReplicationBasedBinlogParser getDefaultBinlogParser() throws Exception{
+        final ReplicationBasedBinlogParser r = new ReplicationBasedBinlogParser();
+        r.registerEventParser(new StopEventParser());
+        r.registerEventParser(new RotateEventParser());
+        r.registerEventParser(new IntVarEventParser());
+        r.registerEventParser(new XidEventParser());
+        r.registerEventParser(new RandEventParser());
+        r.registerEventParser(new QueryEventParser());
+        r.registerEventParser(new UserVarEventParser());
+        r.registerEventParser(new IncidentEventParser());
+        r.registerEventParser(new TableMapEventParser());
+        r.registerEventParser(new WriteRowsEventParser());
+        r.registerEventParser(new UpdateRowsEventParser());
+        r.registerEventParser(new DeleteRowsEventParser());
+        r.registerEventParser(new WriteRowsEventV2Parser());
+        r.registerEventParser(new UpdateRowsEventV2Parser());
+        r.registerEventParser(new DeleteRowsEventV2Parser());
+        r.registerEventParser(new FormatDescriptionEventParser());
+        r.registerEventParser(new GtidEventParser());
+
+        r.setTransport(this.transport);
+        r.setBinlogFileName(this.binlogFileName);
+        return r;
     }
 }

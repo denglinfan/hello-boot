@@ -124,6 +124,14 @@ public class AuthenticatorImpl implements Transport.Authenticator {
         this.maximumPacketLength = maximumPacketLength;
     }
 
+    public String getEncoding() {
+        return encoding;
+    }
+
+    public void setEncoding(String encoding) {
+        this.encoding = encoding;
+    }
+
     protected int buildClientCapabilities(){
         int r = this.clientCapabilities > 0 ? this.clientCapabilities : DEFAULT_CAPABILITIES;
         if(this.initialSchema != null){
