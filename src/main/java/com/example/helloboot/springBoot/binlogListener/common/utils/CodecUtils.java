@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 public final class CodecUtils {
 
-    public static byte[] toBigEnddian(byte[] value){
+    public static byte[] toBigEndian(byte[] value){
         for(int i = 0, length = value.length >> 2; i <= length; i++){
             final int j = value.length - 1 -i;
             final byte t = value[i];

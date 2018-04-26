@@ -154,7 +154,7 @@ public class XInputStreamImpl extends InputStream implements XInputStream {
     public BitColumn readBit(int length, boolean littleEndian) throws IOException {
         byte[] bytes = readBytes((int)((length + 7) >> 3));
         if(!littleEndian){
-            bytes = CodecUtils.toBigEnddian(bytes);
+            bytes = CodecUtils.toBigEndian(bytes);
         }
         return BitColumn.valueOf(length,bytes);
     }

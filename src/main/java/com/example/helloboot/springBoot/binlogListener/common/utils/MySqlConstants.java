@@ -2,6 +2,8 @@ package com.example.helloboot.springBoot.binlogListener.common.utils;
 
 public class MySqlConstants {
 
+    public static final byte[] BINLOG_MAGIC = new byte[]{(byte)0xfe, (byte)0x62, (byte)0x69, (byte)0x6e};
+
     //
     public static final int MAX_PACKET_LENGTH                   = (256 * 256 * 256 -1);
 
@@ -26,6 +28,9 @@ public class MySqlConstants {
     public static final int GTID_LOG_EVENT                      = 33;
 
     //command
+    public static final int COM_QUIT                            = 0x01;
+    public static final int COM_INIT_DB                         = 0x02;
+    public static final int COM_QUERY                           = 0x03;
     public static final int COM_BINLOG_DUMP                     = 0x12;
 
     //client capabilitise

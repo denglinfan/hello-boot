@@ -204,7 +204,7 @@ public class ActiveBufferedInputStream extends InputStream implements Runnable {
             }
 
             this.tail = (this.tail + r) % this.buffer.length;
-            this.size = r;
+            this.size -= r;
             return r;
         }
 
