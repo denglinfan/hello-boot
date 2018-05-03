@@ -1,10 +1,7 @@
 package com.example.helloboot.testSpringBoot;
 
-import com.example.helloboot.springBoot.binlogListener.OpenParser;
-import com.example.helloboot.springBoot.binlogListener.binlog.BinlogEventListener;
-import com.example.helloboot.springBoot.binlogListener.binlog.BinlogEventV4;
-import com.example.helloboot.springBoot.binlogListener.binlog.impl.AbstractBinlogParser;
-import com.example.helloboot.springBoot.binlogListener.binlog.impl.event.XidEvent;
+import com.example.helloboot.binlogListener.OpenParser;
+import com.example.helloboot.binlogListener.binlog.impl.event.XidEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

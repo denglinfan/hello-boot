@@ -1,8 +1,8 @@
 package com.example.helloboot.testSpringBoot;
 
-import com.example.helloboot.springBoot.binlogListener.OpenReplicator;
-import com.example.helloboot.springBoot.binlogListener.binlog.BinlogEventListener;
-import com.example.helloboot.springBoot.binlogListener.binlog.BinlogEventV4;
+import com.example.helloboot.binlogListener.OpenReplicator;
+import com.example.helloboot.binlogListener.binlog.BinlogEventListener;
+import com.example.helloboot.binlogListener.binlog.BinlogEventV4;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -12,9 +12,9 @@ public class OpenReplicatorTest {
 
     public static void main(String args[]) throws Exception{
         final OpenReplicator or = new OpenReplicator();
-        or.setUser("root");
+        or.setUser("charles");
         or.setHost("localhost");
-        or.setPassword("197239");
+        or.setPassword("charles");
         or.setPort(3306);
         or.setServerId(1);
         or.setBinlogPosition(22);

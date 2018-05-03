@@ -65,6 +65,13 @@
 			<optional>true</optional>
 			<scope>true</scope>
 		</dependency>
+
+		<!-- 添加自己定义的start-->
+		<dependency>
+			<groupId>com.wisely</groupId>
+			<artifactId>spring-boot-starter-hello</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<build>
