@@ -13,6 +13,6 @@ public class TestMyStarterController {
 
     @RequestMapping("/myStarter")
     public String index(){
-        return helloService.sayHello();
+        return "charles";//helloService.sayHello();
     }
 }
