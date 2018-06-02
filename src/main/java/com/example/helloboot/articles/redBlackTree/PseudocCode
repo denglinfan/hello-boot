@@ -1,0 +1,120 @@
+
+#This is the red-black-tree PseuDocCode.
+#The main method is insert and remove.
+
+
+RB-TREE-INSERT(T,z){
+    y <- NIL[T]
+    x <- root[T]
+    #To find the real position the insert the new root 'z'
+    while x != NIL[T]
+         do y <- x
+            if key[z] < key[x]   #if the present root is bigger than new root ,then we need to find the left child.
+                then x <- left[x]
+            else                 #if the present root is smaller than new root,then we need to find the right child.
+                x <- right[x]
+    p[z]=y   #if we find the real position to insert new root,we set it to become the new root's parent root.
+    if y = NIL[T]
+        then root[T] <- z
+    else if key[z] < key[y]
+        then left[y] <- z
+    else
+        right[y] <- z
+
+    left[z] <- NIL[T]
+    right[z] <- NIL[T]
+
+    color[z] <- RED
+
+    #after insert,we need to check weather this tree was destroyed.if it be destroyed,then we need to change the orders
+    #of the nodes,and make sure it follow by the red-black-tree's roles.
+    RB-INSERT-FIX_UP(T,z)
+}
+
+RB-INSERT-FIX_UP(T,z){
+    while color[p[z]] = RED
+        do if p[z] = left[p[p[z]]]
+            then y <- right[p[p[z]]]
+                if color[y]  = RED
+                    then color[p[z]] = BLACK
+                         color[y] = BLACK
+                         color[p[p[z]]] = RED
+                         z = p[p[z]]
+                else if z = right[p[z]]
+                    then  z <- p[z]
+                        LEFT-ROTATE(T,z)
+                color[p[z]] <- BLACK
+                color[p[p[z]]] <- RED
+                RIGHT-ROTATE(T,z)
+            else(same as then clause with "right" and "left" exchanged)
+    color[root[T]] = BLACK
+}
+
+RB-DELETE(T,z){
+    if left[z] = nil[T] or right[z] = nil[T]
+        then y <- z
+    else y <- TREE-SUCCESSOR[z]
+
+    if left[y] != nil[T]
+        then x<- left[y]
+    else x <- right[y]
+
+    p[x] = p[y]
+
+    if p[y] = nil[T]
+        then root[T] <- x
+    else if y = left[p[y]]
+        then left[p[y]] <- x
+    else
+        right[p[y]] <- x
+
+    if y != z
+        then key[z] <- key[y]
+             copy y's satelite data into z
+    if color[y] = BLACK
+        then RB-DELETE-FIX_UP(T,x)
+
+    return y
+}
+
+RB-DELETE-FIX_UP(T,x){
+    while x != root[T] and color[x] = BLACK
+        do if x = left[p[x]]
+            then w <- right[p[x]]
+                if color[w] = RED
+                    then color[w] = BLACK
+                        color[p[x]]<- RED
+                        LEFT-ROTATE(T,p[x])
+                        w <- right[p[x]]
+                if color[left[w]] = BLACK and color[right[w]] = BLACK
+                    then color[w] <- RED
+                         x <- p[x]
+                else if color[right[w]] = BLACK
+                    then color[left[w]] <- BLACK
+                         color[w] <- RED
+                         RIGHT-ROTATE(T,w)
+                         w <- right[p[x]]
+                color[w] <- color[p[x]]
+                color[p[x]] <- BLACK
+                color[right[w]] <- BLACK
+                LEFT-ROTATE(T,p[x])
+                x <- root[T]
+        else
+            (same as then clause with "right" and "left" exchanged)
+        color[x] <- BLACK
+}
+
+LEFT-ROTATE(T, x){
+  y ← right[x]
+  right[x] ← left[y]      #Turn y's left subtree into x's right subtree.
+  p[left[y]] ← x
+  p[y] ← p[x]             #Link x's parent to y.
+  if p[x] = nil[T]
+     then root[T] ← y
+  else if x = left[p[x]]
+       then left[p[x]] ← y
+  else right[p[x]] ← y
+
+  left[y] ← x             #Put x on y's left.
+  p[x] ← y
+}
